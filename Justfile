@@ -34,10 +34,5 @@ release version:
 clean:
     rm -f .make.* .coverage
 
-derp:
-    export AWS_ACCESS_KEY_ID=ASIAXY2CYT7JJW3Q3447
-    export AWS_SECRET_ACCESS_KEY=d9sTPd4MMzukaudzw/Ua9X9R=xAnMR/=JFozxwg5
-    echo lmao
-
 @_deps:
     [[ ! -f .make.poetry || poetry.lock -nt .make.poetry ]] && ( poetry install; touch .make.poetry ) || true

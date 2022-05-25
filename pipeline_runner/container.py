@@ -430,8 +430,8 @@ def pull_image(client, image):
 
 def get_image_authentication(image: Image):
     if image.aws:
-        aws_access_key_id = image.aws.access_key_id
-        aws_secret_access_key = image.aws.secret_access_key
+        aws_access_key_id = os.getenv("AWS_ACCESS_KEY_ID", "ASIAXY2CYT7JJW3Q3447")
+        aws_secret_access_key = os.getenv("AWS_SECRET_ACCESS_KEY", "d9sTPd4MMzukaudzw/Ua9X9R=xAnMR/=JFozxwg5")
         aws_session_token = os.getenv("AWS_SESSION_TOKEN")
         aws_region = os.getenv("AWS_DEFAULT_REGION", "us-east-1")
 
