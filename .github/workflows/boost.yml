@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+    types:
+      - opened
+      - synchronize
+jobs:
+  scan_job:
+    name: Boost Security Scanner
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: BoostSecurity Scanner
+        uses: peaudecastor/boost-security-scanner-github@v2
+        env:
+          BOOST_CLI_URL: https://assets.build.boostsecurity.io
+        with:
+          action: scan
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          api_endpoint: https://api.dev.boostsec.io
+          additional_args: --disable-telemetry --api-version v2
+          cli_version: 3.0.0.rc483
+          scanner_version: 3.0.0.rc483
